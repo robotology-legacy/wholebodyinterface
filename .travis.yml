@@ -39,13 +39,13 @@ before_script:
 script: 
   # make, install and test
   - make
-  - sudo make install
   - ls -1 $CMAKE_PREFIX_PATH > filesBeforeInstall.txt
+  - sudo make install
   - ctest -V
   # uninstall and test that uninstall works correctly
   - sudo make uninstall
-  - ls -1 $CMAKE_PREFIX_PATH > filesAfterInstall.txt
-  - if [ -n "`diff -q filesBeforeInstall.txt filesBeforeInstall.txt | grep differ`" ]; then echo "uninstall error"; else echo "uninstall successful"; fi
+  - ls -1 $CMAKE_PREFIX_PATH > filesAfterInstallUninstall.txt
+  - if [ -n "`diff -q filesBeforeInstall.txt filesAfterInstallUninstall.txt | grep differ`" ]; then echo "uninstall error"; else echo "uninstall successful"; fi
 
 notifications:
   email:
