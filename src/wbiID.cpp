@@ -19,6 +19,7 @@
 #include "wbiID.h"
 #include <sstream>
 #include <algorithm>
+#include <stdexcept>
 
 namespace wbi {
 
@@ -180,7 +181,7 @@ const wbi::ID& IDList::at(unsigned index) const
     if (index >= size()) throw std::out_of_range("IDList out of range");
     return storage[index];
 }
-    
+
 void IDList::removeAllIDs()
 {
     this->storage.clear();
