@@ -74,7 +74,6 @@ else()
 endif()
 
 find_package(YCM REQUIRED)
-include(YCMDefaultDirs)
 
 include(AddInstallRPATHSupport)
 add_install_rpath_support(BIN_DIRS "${CMAKE_INSTALL_PREFIX}/bin"
